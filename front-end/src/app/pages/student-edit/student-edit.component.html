@@ -1,0 +1,70 @@
+<div class="container">
+    <form [formGroup]="studentForm" (ngSubmit)="submitStudent()">
+      <div class="row">
+        <h2>Edit User - {{_id}}</h2>
+      </div>
+      <div class="row">
+        <label for="name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+          <input
+            [ngClass]="{
+              'has-error':studentForm.controls['name'].touched && studentForm.controls['name'].invalid,
+              'has-success' : studentForm.controls['name'].touched && studentForm.controls['name'].valid
+            }"
+            type="text"
+            formControlName="name"
+            class="form-control"
+            id="name"
+          >
+          <span style="color:red;" *ngIf="studentForm.controls['name'].touched && studentForm.controls['name'].invalid">Please Enter name</span>
+        </div>
+      </div>
+      <div class="row">
+        <label for="class" class="col-sm-2 col-form-label">Class</label>
+        <div class="col-sm-10">
+          <input [ngClass]="{
+            'has-error':studentForm.controls['classInfo'].touched && studentForm.controls['classInfo'].invalid,
+            'has-success' : studentForm.controls['classInfo'].touched && studentForm.controls['classInfo'].valid
+          }" id="class" type="text" formControlName="classInfo" class="form-control">
+          <span style="color:red;" *ngIf="studentForm.controls['classInfo'].touched && studentForm.controls['classInfo'].invalid">
+            Please Enter class
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <label for="email" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input [ngClass]="{
+              'has-error':studentForm.controls['email'].touched && studentForm.controls['email'].invalid,
+              'has-success' : studentForm.controls['email'].touched && studentForm.controls['email'].valid
+          }" type="email" id="email" formControlName="email" class="form-control">
+          <span style="color:red;" *ngIf="studentForm.controls['email'].touched && studentForm.controls['email'].invalid">
+            Enter Valid Email
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <label for="phno" class="col-sm-2 col-form-label">Phone Number</label>
+          <div class="col-sm-10">
+            <input [ngClass]="{
+              'has-error':studentForm.controls['phoneNumber'].touched && studentForm.controls['phoneNumber'].invalid,
+              'has-success' : studentForm.controls['phoneNumber'].touched && studentForm.controls['phoneNumber'].valid
+            }" type="text" id="phno" formControlName="phoneNumber" class="form-control" />
+          </div>
+      </div>
+      <div class="row">
+        <label for="sem" class="col-sm-2 col-form-label">Semester</label>
+        <div class="col-sm-10">
+          <input [ngClass]="{
+              'has-error':studentForm.controls['phoneNumber'].touched && studentForm.controls['phoneNumber'].invalid,
+              'has-success' : studentForm.controls['phoneNumber'].touched && studentForm.controls['phoneNumber'].valid
+          }" type="text" id="sem" formControlName="semester" class="form-control">
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="d-grid">
+            <input type="submit" class="btn btn-primary btn-sm rounded-pill">
+        </div>
+      </div>
+    </form>
+</div>

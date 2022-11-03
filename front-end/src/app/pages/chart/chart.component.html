@@ -1,0 +1,11 @@
+<div class="container mt-2">
+        <h2>Attendance Chart for <span class="font-weight-bold text-primary text-uppercase">{{monthName}}</span></h2>
+
+        <div *ngIf="attendanceData.length>0">
+            <ngx-charts-bar-vertical (window:resize)="onResize($event)"
+              [view]="view" [results]="attendanceData" [gradient]="gradient" [xAxis]="showXAxis"
+              [yAxis]="showYAxis" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
+              [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel">
+            </ngx-charts-bar-vertical>
+        </div>
+</div>

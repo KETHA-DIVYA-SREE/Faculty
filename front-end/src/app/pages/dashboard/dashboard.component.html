@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <div class="row">
+    <h1 class="display-1">Dashboard</h1>
+  </div>
+  <div class="row g-0 my-4">
+    <div class="col-sm-12 col-md-6">
+      <app-card title="Total Studens" [count]="totalStudents"></app-card>
+    </div>
+    <div class="col-12 col-md-6">
+      <app-card title="Students Present Today" [count]="present"> </app-card>
+    </div>
+  </div>
+  <div class="row">
+    <div class=col-12>
+        <app-chart></app-chart>
+    </div>
+  </div>
+</div>

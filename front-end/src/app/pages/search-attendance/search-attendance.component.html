@@ -1,0 +1,39 @@
+<form [formGroup]="searchForm">
+    <div class="d-flex justify-content-center align-items-center display-6">
+        <div class="p-2">
+          <label for="attendancedate" class="fw-bolder">Select Date</label>
+        </div>
+        <div class="date">
+          <input type="date" id="attendancedate" formControlName="attendancedate" value={{date}} [(ngModel)]="date" (change)="changeDate()" />
+        </div>
+    </div>
+</form>
+
+
+    <div class="py-3">
+      <h1 class="">Students present on <span class="bg-primary text-white">{{date}}</span></h1>
+    </div>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Date</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Semester</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of presentStudentList let i=index">
+            <td>{{student._id}}</td>
+            <td>{{student.name}}</td>
+            <td>{{date}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.phoneNumber}}</td>
+            <td>{{student.semester}}</td>
+        </tr>
+    </tbody>
+
+    </table>

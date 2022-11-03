@@ -1,0 +1,43 @@
+<div class="row my-4">
+  <div class="col-sm-12 col-md-10">
+    <h1 class="display-1">Student List</h1>
+  </div>
+  <div class="col-12 col-md-2">
+    <a routerLink="/student-create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+      <i class="fa fa-plus fa-sm"></i>Add Student</a>
+  </div>
+</div>
+
+<div class="row shadow">
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Action</th>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Semester</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of studentList">
+          <td>
+            <a [routerLink]="['/student-edit',student._id]" class="btn btn-primary btn-sm rounded-pill">
+              <i class="fa fa-pencil-square-o"></i>
+            </a>
+            <a class="btn btn-danger btn-sm rounded-pill" (click)="deleteData(student._id)">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </td>
+          <td>{{student._id}}</td>
+          <td>{{student.name}}</td>
+          <td>{{student.email}}</td>
+          <td>{{student.phoneNumber}}</td>
+          <td>{{student.semester}}</td>
+        </tr>
+    </tbody>
+    </table>
+  </div>
+</div>
